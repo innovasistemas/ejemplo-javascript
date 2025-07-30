@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Javascript</title>
+    </head>
+    <body>
+        <h2>Binomio de Newton</h2>
+        <form action="">
+            <input type="text" id="txt-a" placeholder="Término 1">
+            <input type="text" id="txt-b" placeholder="Término 2">
+            <input type="text" id="txt-n" placeholder="Valor exponente">
+            <br>
+            <input type="button" id="btn-develop" value="Desarrollo binomio">
+        </form>
+
+        <div id="div-result"></div>
+
+        <script>
+            const btnBinomial = document.getElementById('btn-develop');
+            btnBinomial.addEventListener('click', (e) => {
+                let divResult = document.getElementById('div-result');
+                let a = document.getElementById('txt-a');
+                let b = document.getElementById('txt-b');
+                let n = document.getElementById('txt-n');
+                let ea = n.value;
+                let eb = 0;
+                let c = 1;
+                let eas;
+                let ebs;
+                let expression = `(${a.value} + ${b.value})<sup>${n.value}</sup> = `;
+                expression += `${a.value}<sup>${n.value}</sup> `;
+                for (let i = 1; i <= n.value; i++) {
+                    c = c * ea / (eb + 1);
+                    ea--;
+                    eb++;
+                    eas = ea != 1 ? ea : ""; 
+                    ebs = eb != 1 ? eb : ""; 
+                    expression += eb != n.value ? 
+                        `+ ${c}${a.value}<sup>${eas}</sup>${b.value}<sup>${ebs}</sup> ` : 
+                        `+ ${b.value}<sup>${ebs}</sup>`;
+                }
+                divResult.innerHTML = expression;
+            });
+        </script>
+    </body>
+</html>
