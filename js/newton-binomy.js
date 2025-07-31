@@ -1,15 +1,41 @@
-const txtA = document.getElementById('txt-a');
-const txtB = document.getElementById('txt-b');
-const txtN = document.getElementById('txt-n');
-const btnDev = document.getElementById('newton-binomy');
-const divResult = document.getElementById('div-result');
+// let txtTerm1 = document.getElementById('txt-a');
+// let txtTerm2 = document.getElementById('txt-b');
+// let txtN = document.getElementById('txt-n');
+let txtTerm1 = document.getElementById('txt-a');
+let txtTerm2 = document.getElementById('txt-b');
+let txtN = document.getElementById('txt-n');
+const elements = document.querySelectorAll('.disabled')
 
-btnDev.addEventListener('click', (e) => {
-    // let msg = "Término 1: " + txtA.value;
-    let msg = `
-        Término 1: ${txtA.value}
-        <br>
-        Término 2: ${txtB.value}
-    `;
-    divResult.innerHTML = msg;
+elements.forEach(element => {
+    element.addEventListener('focusout', (e) => {
+        disableButton();
+    });
 });
+
+let appTitle = new Vue({
+    el: '#app-title',
+    data: {
+        message: "Binomio de Newton con Vue JS"
+    }
+});
+
+let appBinomial = new Vue({
+    el: '#app-binomial',
+    data:{
+        isDisabled: true
+    },
+});
+
+
+function disableButton()
+{
+    appBinomial.isDisabled = true;
+    if (txtTerm1.value.trim() !== '') {
+        if (txtTerm2.value.trim() !== '') {
+            if (txtN.value.trim() !== '') {
+                appBinomial.isDisabled = false;
+            }
+        } 
+    } 
+
+}

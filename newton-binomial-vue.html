@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>Binomio de Newton con Vue JS</title>
+    </head>
+    <body>
+        <h1 id="app-title">{{ message }}</h1>
+        <form action="">
+            <label for="txt-a">Término 1</label>
+            <input type="text" id="txt-a" placeholder="Término 1" class="disabled" @focusout="changeDisable">
+            <br>
+            <label for="txt-b">Término 2</label>
+            <input type="text" id="txt-b" placeholder="Término 2" class="disabled">
+            <br>
+            <label for="txt-n">Exponente</label>
+            <input type="text" id="txt-n" placeholder="Exponente" class="disabled">
+            <br>
+            <input type="button" id="app-binomial" value="Desarrollo binomio" :disabled="isDisabled">
+        </form>
+
+        <div id="app-result"></div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="js/newton-binomy.js"></script>
+    </body>
+</html>
