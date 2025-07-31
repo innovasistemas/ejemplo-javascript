@@ -17,7 +17,15 @@
             <input type="button" id="app-binomial" value="Desarrollo binomio" :disabled="isDisabled">
         </form>
 
+        <ol id="app-list">
+            <li v-for="item in items">
+                {{ item.text }}
+            </li>
+        </ol>
+        
         <div id="app-result"></div>
+
+
         
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="js/newton-binomy.js"></script>

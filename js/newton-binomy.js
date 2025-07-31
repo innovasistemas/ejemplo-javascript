@@ -1,9 +1,6 @@
-// let txtTerm1 = document.getElementById('txt-a');
-// let txtTerm2 = document.getElementById('txt-b');
-// let txtN = document.getElementById('txt-n');
-let txtTerm1 = document.getElementById('txt-a');
-let txtTerm2 = document.getElementById('txt-b');
-let txtN = document.getElementById('txt-n');
+const txtTerm1 = document.querySelector('#txt-a');
+const txtTerm2 = document.querySelector('#txt-b');
+const txtN = document.querySelector('#txt-n');
 const elements = document.querySelectorAll('.disabled')
 
 elements.forEach(element => {
@@ -24,6 +21,17 @@ let appBinomial = new Vue({
     data:{
         isDisabled: true
     },
+});
+
+let appList = new Vue({
+    el: '#app-list',
+    data: {
+        items: [
+            {text: '1'},
+            {text: '2'},
+        ]
+    }
+
 });
 
 
