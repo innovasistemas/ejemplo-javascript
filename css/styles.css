@@ -1,0 +1,19 @@
+.img-thumb {
+  border: 1px solid #ddd; /* Gray border */
+  border-radius: 10px;  /* Rounded border */
+  padding: 5px; /* Some padding */
+  width: 100px; /* Set a small width */
+  height: 70px;
+}
+
+/* Add a hover effect (blue shadow) */
+.img-thumb:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+
+.content-images {
+    display: flex; /*Convertimos al menú en flexbox*/
+    justify-content: space-around; /*Con esto le indicamos que margine todos los items que se encuentra adentro hacia la derecha e izquierda*/
+    align-items: center; /*con esto alineamos de manera vertical*/
+    margin-right: 0px;
+}

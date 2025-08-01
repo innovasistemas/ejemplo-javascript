@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Binomio de Newton con Vue JS</title>
+        <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
         <h1 id="app-title">{{ message }}</h1>
@@ -17,14 +18,21 @@
             <input type="button" id="app-binomial" value="Desarrollo binomio" :disabled="isDisabled">
         </form>
 
-        <ol id="app-list">
+        <!-- <ol id="app-list">
             <li v-for="item in items">
-                {{ item.text }}
+                <img v-bind:src="item.src" alt="" class="img-thumb">
             </li>
-        </ol>
+        </ol> -->
+        <div id="app-list" class="content-images">
+            <div v-for="item in items">
+                <img v-bind:src="item.src" alt="" class="img-thumb"><br>
+                <!-- <img :src="item.src" alt=""> -->
+            </div>
+        </div>
+
+
         
         <div id="app-result"></div>
-
 
         
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

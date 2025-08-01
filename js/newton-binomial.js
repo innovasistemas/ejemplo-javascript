@@ -2,6 +2,10 @@ const txtTerm1 = document.querySelector('#txt-a');
 const txtTerm2 = document.querySelector('#txt-b');
 const txtN = document.querySelector('#txt-n');
 const elements = document.querySelectorAll('.disabled')
+let imageSource = [];
+let TOTAL_IMAGES = 5;
+loadImages();
+
 
 elements.forEach(element => {
     element.addEventListener('focusout', (e) => {
@@ -23,17 +27,21 @@ let appBinomial = new Vue({
     },
 });
 
+
 let appList = new Vue({
     el: '#app-list',
     data: {
-        items: [
-            {text: '1'},
-            {text: '2'},
-        ]
+        items: imageSource
     }
-
 });
 
+
+function loadImages()
+{
+    for (let i = 1; i <= TOTAL_IMAGES; i++) {
+        imageSource.push({src: `images/img${i}.jpg`});
+    }
+}
 
 function disableButton()
 {
