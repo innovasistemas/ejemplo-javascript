@@ -16,24 +16,16 @@
             <input type="text" id="txt-n" placeholder="Exponente" class="disabled">
             <br>
             <input type="button" id="app-binomial" value="Desarrollo binomio" :disabled="isDisabled">
+            <input type="button" id="app-binomial1" value="Desarrollo binomio">
         </form>
 
-        <!-- <ol id="app-list">
-            <li v-for="item in items">
-                <img v-bind:src="item.src" alt="" class="img-thumb">
-            </li>
-        </ol> -->
         <div id="app-list" class="content-images">
             <div v-for="item in items">
                 <img v-bind:src="item.src" alt="" class="img-thumb"><br>
-                <!-- <img :src="item.src" alt=""> -->
             </div>
         </div>
-
-
-        
+       
         <div id="app-result"></div>
-
         
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="js/newton-binomial.js"></script>
