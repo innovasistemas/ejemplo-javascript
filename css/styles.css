@@ -1,3 +1,7 @@
+#app-title {
+    text-align: center;
+}
+
 .img-thumb {
     border: 1px solid #ddd; /* Gray border */
     border-radius: 40px;  /* Rounded border */
