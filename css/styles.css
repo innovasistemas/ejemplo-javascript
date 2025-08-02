@@ -9,15 +9,19 @@
 /* Add a hover effect (blue shadow) */
 .img-thumb:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
-    width: 85px;
-    height: 85px;
-    border-radius: 50px;
-    transition: .5s all;
+    width: 100px;
+    height: 100px;
+    border-radius: 60px;
+    transition: 0.5s all;
 }
 
 .content-images {
-    display: flex; /*Convertimos al menú en flexbox*/
+    height: 300px;
+    display: flex;
     justify-content: space-around; /*Con esto le indicamos que margine todos los items que se encuentra adentro hacia la derecha e izquierda*/
     align-items: center; /*con esto alineamos de manera vertical*/
-    /* overflow: hidden;  */
+}
+
+.div-image {
+    max-width: 70px; 
 }

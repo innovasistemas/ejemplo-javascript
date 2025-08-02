@@ -1,5 +1,8 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
     <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Binomio de Newton con Vue JS</title>
         <link rel="stylesheet" href="css/styles.css">
     </head>
@@ -15,13 +18,15 @@
             <label for="txt-n">Exponente</label>
             <input type="text" id="txt-n" placeholder="Exponente" class="disabled">
             <br>
-            <input type="button" id="app-binomial" value="Desarrollo binomio" :disabled="isDisabled">
-            <input type="button" id="app-binomial1" value="Desarrollo binomio">
+            <input type="button" id="app-binomial" value="Desarrollo binomio" :disabled="isDisabled" onclick="btnDevClick()">
+            <input type="reset" id="app-reset" value="Restablecer" v-on:click="reset">
         </form>
 
         <div id="app-list" class="content-images">
             <div v-for="item in items">
-                <img v-bind:src="item.src" alt="" class="img-thumb"><br>
+                <div class="div-image">
+                    <img v-bind:src="item.src" v-bind:alt="item.alt" class="img-thumb"><br>
+                </div>
             </div>
         </div>
        

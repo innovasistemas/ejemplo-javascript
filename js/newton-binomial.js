@@ -1,16 +1,11 @@
 const txtTerm1 = document.querySelector('#txt-a');
 const txtTerm2 = document.querySelector('#txt-b');
 const txtN = document.querySelector('#txt-n');
-const btnDev = document.querySelector('#app-binomial');
-const elements = document.querySelectorAll('.disabled')
+const elements = document.querySelectorAll('.disabled');
+const TOTAL_IMAGES = 10;
 let imageSource = [];
-let TOTAL_IMAGES = 5;
 
 loadImages();
-
-btnDev.addEventListener('click', (e) => {
-    alert(0)
-});
 
 elements.forEach(element => {
     element.addEventListener('focusout', (e) => {
@@ -18,12 +13,14 @@ elements.forEach(element => {
     });
 });
 
+
 let appTitle = new Vue({
     el: '#app-title',
     data: {
         message: "Binomio de Newton con Vue JS"
     }
 });
+
 
 let appBinomial = new Vue({
     el: '#app-binomial',
@@ -41,12 +38,26 @@ let appList = new Vue({
 });
 
 
+let appReset = new Vue({
+    el: '#app-reset',
+    data: {
+        
+    },
+    methods: {
+        reset: (e) => {
+            appBinomial.isDisabled = true;
+        }
+    }
+});
+
+
 function loadImages()
 {
     for (let i = 1; i <= TOTAL_IMAGES; i++) {
-        imageSource.push({src: `images/img${i}.jpg`});
+        imageSource.push({src: `images/img${i}.jpg`, alt: `images/img${i}.jpg`});
     }
 }
+
 
 function disableButton()
 {
@@ -54,9 +65,15 @@ function disableButton()
     if (txtTerm1.value.trim() !== '') {
         if (txtTerm2.value.trim() !== '') {
             if (txtN.value.trim() !== '') {
-                appBinomial.removeAttribute('disabled')
                 appBinomial.isDisabled = false;
             }
         } 
     } 
 }
+
+
+function btnDevClick()
+{
+    alert(0)
+}
+
