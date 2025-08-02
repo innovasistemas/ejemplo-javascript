@@ -1,7 +1,7 @@
 const txtTerm1 = document.querySelector('#txt-a');
 const txtTerm2 = document.querySelector('#txt-b');
 const txtN = document.querySelector('#txt-n');
-// const divResult = document.querySelector('#app-result');
+const appResult = document.querySelector('#app-result');
 const elements = document.querySelectorAll('.disabled');
 const TOTAL_IMAGES = 10;
 let imageSource = [];
@@ -21,6 +21,14 @@ let appTitle = new Vue({
         message: "Binomio de Newton con Vue JS"
     }
 });
+
+
+// let textResult = new Vue({
+//     el: '#txt-a',
+//     data: {
+//         updateResult: txtTerm1.value
+//     }
+// });
 
 
 let appBinomial = new Vue({
@@ -53,14 +61,6 @@ let appBinomial = new Vue({
 });
 
 
-let appResult = new Vue({
-    el: '#app-result',
-    data: {
-        updateResult: txtTerm1.value + "dd"
-    }
-});
-
-
 let appList = new Vue({
     el: '#app-list',
     data: {
@@ -76,9 +76,8 @@ let appReset = new Vue({
     },
     methods: {
         reset: (e) => {
-            appBinomial.isDisabled = true;
-            alert(0)
             appResult.innerHTML = '';
+            appBinomial.isDisabled = true;
         }
     }
 });

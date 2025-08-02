@@ -16,23 +16,37 @@
                 </div>
             </div>
         </div>
-
-        <form action=""> 
-            <label for="txt-a">Término 1</label>
-            <input type="text" id="txt-a" placeholder="Término 1" class="disabled" v-model="updateResult">
-            <br>
-            <label for="txt-b">Término 2</label>
-            <input type="text" id="txt-b" placeholder="Término 2" class="disabled">
-            <br>
-            <label for="txt-n">Exponente</label>
-            <input type="text" id="txt-n" placeholder="Exponente" class="disabled">
-            <br>
-            <input type="button" id="app-binomial" value="Desarrollo binomio" :disabled="isDisabled" v-on:click="binomial">
-            <input type="reset" id="app-reset" value="Restablecer" v-on:click="reset">
-        </form>
-
-        <div id="app-result">{{ updateResult }}</div>
         
+            <form action=""> 
+                <div id="div-result">
+                    <label for="txt-a">Término 1</label>
+                    <input type="text" id="txt-a" placeholder="Término 1" class="disabled" v-model="updateResult">
+                    <span>{{ updateResult }}</span>
+                </div> 
+                <div>
+                    <label for="txt-b">Término 2</label>
+                    <input type="text" id="txt-b" placeholder="Término 2" class="disabled">
+                </div>
+                <div>
+                    <label for="txt-n">Exponente</label>
+                    <input type="text" id="txt-n" placeholder="Exponente" class="disabled">
+                </div>
+                <div>
+                    <input type="button" id="app-binomial" value="Desarrollo binomio" :disabled="isDisabled" v-on:click="binomial">
+                    <input type="reset" id="app-reset" value="Restablecer" v-on:click="reset">
+                </div>
+                   
+            </form>
+            
+            <div id="app-result"></div>
+            
+            <!-- <div id="app-result2">Aquí:  -->
+                <!-- <input type="text" id="txt-x" placeholder="Término" class="" v-model="updateResult"> -->
+                <!-- {{ message }} -->
+            <!-- </div> -->
+
+        
+
         <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
         <script src="js/newton-binomial.js"></script>
     </body>
