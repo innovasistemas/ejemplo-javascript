@@ -16,29 +16,28 @@
                 </div>
             </div>
         </div>
-        
+        <div id="app-form">
             <form action=""> 
-                <div id="div-result">
+                <div>
                     <label for="txt-a">Término 1</label>
-                    <input type="text" id="txt-a" placeholder="Término 1" class="disabled" v-model="updateResult">
-                    <span>{{ updateResult }}</span>
-                </div> 
+                    <input type="search" id="txt-a" placeholder="Término 1" maxlength="1" class="disabled" v-model="updateResult">
+                </div>
                 <div>
                     <label for="txt-b">Término 2</label>
-                    <input type="text" id="txt-b" placeholder="Término 2" class="disabled">
+                    <input type="search" id="txt-b" placeholder="Término 2" maxlength="1" class="disabled" v-model="updateResult2">
                 </div>
                 <div>
                     <label for="txt-n">Exponente</label>
-                    <input type="text" id="txt-n" placeholder="Exponente" class="disabled">
+                    <input type="number" id="txt-n" placeholder="Exponente" min="1" class="disabled">
                 </div>
-                <div>
+                <div id="div-button">
                     <input type="button" id="app-binomial" value="Desarrollo binomio" :disabled="isDisabled" v-on:click="binomial">
                     <input type="reset" id="app-reset" value="Restablecer" v-on:click="reset">
                 </div>
-                   
             </form>
-            
+            <span>{{ updateResult }} <span v-if="seen">+</span> {{ updateResult2 }}</span>
             <div id="app-result"></div>
+        </div>    
             
             <!-- <div id="app-result2">Aquí:  -->
                 <!-- <input type="text" id="txt-x" placeholder="Término" class="" v-model="updateResult"> -->

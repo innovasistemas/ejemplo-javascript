@@ -23,14 +23,6 @@ let appTitle = new Vue({
 });
 
 
-// let textResult = new Vue({
-//     el: '#txt-a',
-//     data: {
-//         updateResult: txtTerm1.value
-//     }
-// });
-
-
 let appBinomial = new Vue({
     el: '#app-binomial',
     data:{
@@ -38,12 +30,17 @@ let appBinomial = new Vue({
     },
     methods: {
         binomial: (e) => {
+            alert(0)
             let ea = txtN.value;
             let eb = 0;
             let c = 1;
             let eas;
             let ebs;
-            let expression = `(${txtTerm1.value} + ${txtTerm2.value})<sup>${txtN.value}</sup> = `;
+            let expression = `
+                <strong>
+                    (${txtTerm1.value} + ${txtTerm2.value})<sup>${txtN.value}</sup>
+                </strong> = 
+            `;
             expression += `${txtTerm1.value}<sup>${txtN.value}</sup> `;
             for (let i = 1; i <= txtN.value; i++) {
                 c = c * ea / (eb + 1);
@@ -76,11 +73,34 @@ let appReset = new Vue({
     },
     methods: {
         reset: (e) => {
+            alert(1)
             appResult.innerHTML = '';
             appBinomial.isDisabled = true;
         }
     }
 });
+
+
+let appForm = new Vue({
+    el: '#app-form',
+    components: {
+        appBinomial,
+        appReset
+    },
+    data: {
+        updateResult: txtTerm1.value.trim(),
+        updateResult2: txtTerm2.value.trim(),
+        seen: show()
+        // updateResult: txtTerm1.value.trim() !== '' ? `(${txtTerm1.value} + ${txtTerm2.value}) =` : '' 
+    },
+    
+});
+
+function show() 
+{
+    alert(txtTerm1.value.trim() !== '' && txtTerm2.value.trim() !== '' ? true : false)
+    return txtTerm1.value.trim() !== '' && txtTerm2.value.trim() !== '' ? true : false 
+}
 
 
 function loadImages()

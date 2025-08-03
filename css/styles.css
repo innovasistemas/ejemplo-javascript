@@ -1,16 +1,91 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+div {
+    padding: 5px;
+}
+
+form {
+    max-width: 500px; 
+    margin: -70px auto 20px auto;
+}
+
+input[type=text], 
+input[type=search], 
+input[type=number] {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease; 
+    box-sizing: border-box;
+}
+
+input[type=text]:focus, 
+input[type=search]:focus, 
+input[type=number]:focus {
+    background-color: #f0f0f0; 
+    border-color: #007bff;
+    outline: none;
+}
+
+input[type=button], input[type=reset], button {
+    margin: 0 auto;
+    padding: 12px 30px;
+    border-radius: 5px;
+    background-color:#007bff;
+    color: #fff;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+input[type=reset] {
+    background-color: #6f42c1;
+}
+
+input[type=button]:disabled, 
+input[type=reset]:disabled, 
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+input[type=button]:active:not([disabled]), 
+input[type=reset]:active:not([disabled]), 
+button:active:not([disabled]) {
+    background-color: #0662c5;
+    transition: all 0.3s ease;
+}
+
+input[type=reset]:active:not([disabled]) {
+    background-color: #6c757d;
+    transition: all 0.3s ease;
+}
+
 #app-title {
     text-align: center;
 }
 
+#div-button {
+    display: flex;
+    justify-content: center;
+}
+
+#app-result {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.5em;
+}
+
 .img-thumb {
-    border: 1px solid #ddd; /* Gray border */
-    border-radius: 40px;  /* Rounded border */
-    padding: 5px; /* Some padding */
-    width: 70px; /* Set a small width */
+    border: 1px solid #ddd; 
+    border-radius: 40px;  
+    padding: 5px; 
+    width: 70px; 
     height: 70px;
 }
 
-/* Add a hover effect (blue shadow) */
 .img-thumb:hover {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
     width: 100px;
@@ -22,8 +97,9 @@
 .content-images {
     height: 300px;
     display: flex;
-    justify-content: space-around; /*Con esto le indicamos que margine todos los items que se encuentra adentro hacia la derecha e izquierda*/
-    align-items: center; /*con esto alineamos de manera vertical*/
+    justify-content: space-around; 
+    align-items: center; 
+    margin: -90px 0px 0px 0px;
 }
 
 .div-image {
