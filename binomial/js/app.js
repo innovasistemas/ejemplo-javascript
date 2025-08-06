@@ -8,7 +8,7 @@ angular.module('app-project', [])
         $scope.from.setDate($scope.to.getDate( - 30));
         $scope.radiation = null;
 
-        $http.get('../json/CoordenadasColombia.json')
+        $http.get('json/CoordenadasColombia.json')
             .then((response) => {
                 $scope.cities = response.data;
             });
