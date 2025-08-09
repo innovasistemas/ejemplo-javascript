@@ -1,0 +1,1 @@
+const app = vue.module('')
